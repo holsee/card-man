@@ -2,7 +2,7 @@ exports.withPack = function(deck) {
   return {
       _deck: deck,
 
-      deal: function(amount) {
+    dealWhite: function(amount) {
       //_shuffle();
       
       var temp = [];
@@ -12,6 +12,9 @@ exports.withPack = function(deck) {
       }
 
       return temp;
+    },
+    dealBlack: function() {
+      return this._deck.blackCards.pop();
     }
   };
 };

@@ -27,6 +27,24 @@
 
   <body>
 
+    <!-- Cards -->
+    <div class="container">
+      <!-- Black Card -->
+      <table class="table">
+        <tr class="active"><td><%= game.round.blackCard %></td></tr>
+      </table>
+
+      <!-- White Cards -->
+      <table class="table table-hover">
+        <% game.players[0].hand.forEach(function(card) { %>
+          <tr>
+            <td><%= card %></td>
+          </tr>
+        <% }) %>
+      </table>
+
+    </div> <!-- /container -->
+
     <!-- SCORE -->
     <div class="container">
       <table class="table">

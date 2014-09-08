@@ -5,7 +5,7 @@ var deck = require('./deck')
 var createPlayer = function(name) {
   return {
     name: name,
-    hand: deck.deal(10),
+    hand: deck.dealWhite(10),
     score: 0
   }
 }
@@ -19,7 +19,10 @@ exports.create = function(cb) {
       createPlayer("holsee"), 
       createPlayer("cree"),
       createPlayer("walliums")
-    ]
+    ], 
+    round: {
+      blackCard: deck.dealBlack()
+    }
   }
 
   cb(null, game);
