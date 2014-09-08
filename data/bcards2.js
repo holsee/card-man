@@ -8,5 +8,5 @@ exports.blackCards = ["That's right, I killed __________. How, you ask? ________
 "In M. Night Shyamalan's new movie, Bruce Willis discovers that __________ had really been __________ all along.",
 "I never truly understood __________ until I encountered __________.",
 "Rumor has it that Vladimir Putin's favorite dish is __________ stuffed with __________.",
-"LifetimeÂ® presents __________, the story of __________.",
+"Lifetime® presents __________, the story of __________.",
 "What's the next superhero/sidekick duo?"]

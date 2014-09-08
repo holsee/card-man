@@ -31,10 +31,18 @@
     <div class="container">
       <!-- Black Card -->
       <table class="table">
-        <tr class="active"><td><%= game.round.blackCard %></td></tr>
+        <tr class="active">
+          <td><%= game.round.blackCard.card %></td>
+
+
+        </tr>
       </table>
 
-      <h4 class="form-signin-heading">Pick one...</h4>
+      <% if(game.round.blackCard.pick2) { %>
+        <h4 class="form-signin-heading">Pick <strong>TWO</strong>...</h4> 
+      <% } else { %>
+        <h4 class="form-signin-heading">Pick one...</h4>  
+      <% } %>
       <!-- White Cards -->
       <table id="whitecards" class="table table-hover">
         <% game.players[0].hand.forEach(function(card) { %>
@@ -60,8 +68,18 @@
 
     <script>
     $(function(){
+      var last;
       $('#whitecards tr').click(function(){
-        $(this).addClass('success').siblings().removeClass('success');
+        var limit = 1;
+        var pick2 = <%= game.round.blackCard.pick2 %>;
+
+        if(pick2) {
+          limit = 2;
+        }
+
+        if($('#whitecards tr.success').length < limit || $(this).hasClass('success')) {
+          $(this).toggleClass('success');
+        }
       });
     });
     </script>

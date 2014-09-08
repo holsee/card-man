@@ -25,7 +25,6 @@ router.get('/game', function(req, res) {
   });
 });
 
-
 /* GET game page. */
 router.get('/game/:id', function(req, res) {
   game.create(function(err, game){
