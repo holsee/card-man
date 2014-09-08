@@ -34,19 +34,20 @@
         <tr class="active"><td><%= game.round.blackCard %></td></tr>
       </table>
 
+      <h4 class="form-signin-heading">Pick one...</h4>
       <!-- White Cards -->
-      <table class="table table-hover">
+      <table id="whitecards" class="table table-hover">
         <% game.players[0].hand.forEach(function(card) { %>
           <tr>
             <td><%= card %></td>
           </tr>
         <% }) %>
       </table>
-
     </div> <!-- /container -->
 
-    <!-- SCORE -->
     <div class="container">
+
+      <h2 class="form-signin-heading">Playas</h2>
       <table class="table">
         <% game.players.forEach(function(player) { %>
           <tr>
@@ -56,6 +57,14 @@
         <% }) %>
       </table>
     </div> <!-- /container -->
+
+    <script>
+    $(function(){
+      $('#whitecards tr').click(function(){
+        $(this).addClass('success').siblings().removeClass('success');
+      });
+    });
+    </script>
 
   </body>
 </html>

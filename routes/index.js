@@ -30,6 +30,7 @@ router.get('/game', function(req, res) {
 router.get('/game/:id', function(req, res) {
   game.create(function(err, game){
     //TODO: Game not found
+    console.log(game)
     res.render('game', { game: game });
   });
 });
