@@ -45,9 +45,10 @@
       $(function(){
 
         $('.form-signin').submit(function(e){
+
           var uname = $('input#username').val();
-          var game = $('input#name').val();
-          if(uname){
+          var game = $('input#game').val();
+          if(uname && game){
             alert('joining'+ game + 'as with: '+ uname);
           }
 
