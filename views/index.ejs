@@ -10,12 +10,13 @@
     <meta name="author" content="">
    
 
-    <title>CARD MAN</title>
+    <title>Card Man</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+	
 
     <!-- Bootstrap core CSS -->
     <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
+<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="javascripts/site.js"></script>
 
@@ -27,19 +28,26 @@
     <![endif]-->
   </head>
 
-  <body>
-
-    <div class="container">
-
-      <form class="form-signin" role="form">
-        <h2 class="form-signin-heading">Enter your name</h2>
-        <input id="username" type="name" class="form-control" placeholder="<%= name %>" required autofocus>
-        <input id="game" type="game" class="form-control" placeholder="Game name" required="">
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Create Game</button>
-      </form>
-
-    </div> <!-- /container -->
+  <body> 
+	<nav class="navbar navbar-inverse" role="navigation"></nav>
+	<div class="container">
+		<div class="login">
+			<h1>Card Man</h1>
+			<img src="/img/avatar.png" class="img-circle">
+			<form class="form-signin"	  role="form">
+				<h3 class="form-signin-heading">Enter name</h3>
+				<input id="username" type="name" class="form-control" placeholder="<%= name %>" required autofocus>
+				<input id="game" type="game" class="form-control" placeholder="Game name" required="">
+				<button class="btn btn-lg btn-primary btn-block" type="submit">Create Game</button>
+			</form>
+		</div>
+	</div>
+	<div class="footer">
+      <div class="container">
+      </div>
+    </div>
+		
+		
 
     <script>
       $(function(){
@@ -49,7 +57,7 @@
           var uname = $('input#username').val();
           var game = $('input#game').val();
           if(uname && game){
-            alert('joining'+ game + 'as with: '+ uname);
+            alert('Joining game' + game + ' with: '+ uname);
           }
 
           e.preventDefault();
