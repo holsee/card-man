@@ -55,8 +55,9 @@
           var uname = $('input#username').val();
           var game = $('input#game').val();
           if(uname && game){
-            alert('Joining game' + game + ' with: '+ uname);
+            document.location = "/game/" + game;
           }
+
 
           e.preventDefault();
         }); 
