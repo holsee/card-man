@@ -12,3 +12,5 @@ var getRandomName = function() {
 router.get('/', function(req, res) {
   res.render('index', { name: getRandomName() });
 });
+
+module.exports = router;

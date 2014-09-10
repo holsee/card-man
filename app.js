@@ -5,7 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
+var landingController = require('./controllers/landing');
+var gameController = require('./controllers/game');
+
 var app = express();
 
 // view engine setup
@@ -24,7 +26,10 @@ app.use('/bower_components',
     express.static(path.join(__dirname, '/bower_components')));
 
 
-app.use('/', routes);
+// Routes
+
+app.use('/', landingController);
+app.use('/game', gameController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
